@@ -8,7 +8,7 @@ import { AuthService                                        } from 'ng2-ui-auth'
 import { FormHelperService } from '../../core/services/form-helper.service';
 import { UserStore         } from '../../core/stores/user-store';
 // Custom models
-import { ITokenUser } from '../../../models/user';
+import { ITokenUser } from '../../models/user';
 
 @Component({
   selector: 'app-login',
