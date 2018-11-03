@@ -14,7 +14,7 @@ import { UserStore } from '../../../core/stores/user-store';
 @Component({
   selector: 'app-notification-detail',
   templateUrl: './notification-detail.component.html',
-  styleUrls: ['./notification-detail.component.css']
+  styleUrls: ['./notification-detail.component.scss']
 })
 
 export class NotificationDetailComponent implements OnInit {

@@ -9,7 +9,7 @@ import { UserStore } from '../../../core/stores/user-store';
 @Component({
   selector: 'app-collection-notifications',
   templateUrl: './collection-notifications.component.html',
-  styleUrls: ['./collection-notifications.component.css']
+  styleUrls: ['./collection-notifications.component.scss']
 })
 export class CollectionNotificationsComponent implements OnInit {
   // @ViewChild('patata') input: MatFormField;

@@ -8,7 +8,7 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "myrun": "cordova run --emulator"
+        "myrun": "npm run build && cordova run --emulator"
     },
     "private": true,
     "dependencies": {

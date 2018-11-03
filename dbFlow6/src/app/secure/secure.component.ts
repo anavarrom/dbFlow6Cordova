@@ -18,7 +18,7 @@ import { SecureSocketioService   } from './secure-socketio.service';
 @Component({
   selector: 'app-secure-comps',
   templateUrl: './secure.component.html',
-  styleUrls: ['./secure.component.css']
+  styleUrls: ['./secure.component.scss']
 
 })
 

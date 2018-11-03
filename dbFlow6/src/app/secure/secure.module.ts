@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 // import { NgxJsonViewerModule } from 'ngx-json-viewer';
 
 // Custom modules
+import {CoreModule} from '../core/core.module';
 // Custom Components
 import { MessageStore  } from '../core/stores/message-store';
 import { UserStore     } from '../core/stores/user-store';
@@ -29,7 +30,9 @@ const externalModules = [
   MobxAngularModule,
   RouterModule,
 ];
+
 const dbFlow6Components = [
+  SecureComponent,
   MainComponent,
   CollectionNotificationsComponent,
   NotificationDetailComponent
@@ -39,14 +42,16 @@ const dbFlow6Components = [
 @NgModule({
   imports: [
     ...externalModules,
-    ...dbFlow6Components
+    CoreModule
   ],
   entryComponents: [
     ...dbFlow6Components
   ],
-  declarations: [SecureComponent/*, SearchComponent*/],
+  declarations: [
+      ...dbFlow6Components
+  ],
 //  providers: [{ provide: Todos, useClass: remotedev(Todos) }],
-  providers: [UserStore, MessageStore, UsersService, SecureSocketioService],
+  providers: [],
   exports: [SecureComponent],
 
 })

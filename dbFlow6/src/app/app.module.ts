@@ -19,11 +19,13 @@ import { Tab2Component } from './page1/content/tab2/tab2.component';
 // Custom  modules
 import { AppRoutingModule         } from './app-routing.module';
 import { SecureModule             } from './secure/secure.module';
+import { CoreModule             } from './core/core.module';
 // import { SharedModule             } from './shared/shared.module';
 // import { NotificationsModule         } from './secure/notifications/notifications.module';
 // import { FilesModule              } from './secure/files/files.module';
 
 // Custom Components
+import { PublicComponent } from './public/public.component';
 
 import { LoginComponent } from './public/login/login.component';
 
@@ -48,6 +50,7 @@ const pages = [
 
 const dbFlow6Components = [
   LoginComponent,
+  PublicComponent
 ];
 
 const externalModules = [
@@ -57,7 +60,8 @@ const externalModules = [
   MobxAngularModule
 ];
 const customModules = [
-  SecureModule
+  SecureModule,
+  CoreModule
 ];
 
 
