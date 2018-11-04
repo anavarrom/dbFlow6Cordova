@@ -3,6 +3,7 @@ import { Component, OnInit                                  } from '@angular/cor
 import { FormBuilder, FormControl, FormGroup, Validators    } from '@angular/forms';
 import { Router                                             } from '@angular/router';
 import { AuthService                                        } from 'ng2-ui-auth';
+import * as ons from 'onsenui';
 
 // Custom services
 import { FormHelperService } from '../../core/services/form-helper.service';
@@ -35,32 +36,34 @@ export class LoginComponent implements OnInit {
   }
 
   login(loginData: { username: string, password: string }) {
-    this.auth.login(loginData)
-      .subscribe({
-        error: (err: any) => alert(err.message),
-        next: (data: any) => {
-            const currentUser = data.tokenInfo;
-            // Update the user store
-            this.userStore.setCurrentUser(currentUser);
-        },
-        complete: () => {
-          this.router.navigateByUrl('main');
-        }
-      });
+    ons.notification.alert('Se lanzo!!!!!!');
+    // this.auth.login(loginData)
+    //   .subscribe({
+    //     error: (err: any) => alert(err.message),
+    //     next: (data: any) => {
+    //         const currentUser = data.tokenInfo;
+    //         // Update the user store
+    //         this.userStore.setCurrentUser(currentUser);
+    //     },
+    //     complete: () => {
+    //       this.router.navigateByUrl('main');
+    //     }
+    //   });
   }
 
   loginWithGoogle() {
-    this.auth.authenticate('google')
-      .subscribe({
-        error: (err: any) => alert(err.message),
-        next: (data: any) => {
-          const currentUser = data.tokenInfo;
-          // Update the user store
-          this.userStore.setCurrentUser(currentUser);
-      },
-      complete: () => {
-          this.router.navigateByUrl('main');
-        }
-      });
+    ons.notification.alert('Se lanzo el logout modificado!!!!!!');
+    // this.auth.authenticate('google')
+    //   .subscribe({
+    //     error: (err: any) => alert(err.message),
+    //     next: (data: any) => {
+    //       const currentUser = data.tokenInfo;
+    //       // Update the user store
+    //       this.userStore.setCurrentUser(currentUser);
+    //   },
+    //   complete: () => {
+    //       this.router.navigateByUrl('main');
+    //     }
+    //   });
   }
 }
