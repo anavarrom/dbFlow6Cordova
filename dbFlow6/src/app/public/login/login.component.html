@@ -1,16 +1,43 @@
-VISTA DEL COMPONENTE DE LOGIN
-<form [formGroup]="form" (ngSubmit)="login(form.value)">
-    <div class="form-group">
-        <ons-input id="username" name="username" placeholder="Usuario" [formControl]="form.controls['username']" class="form-control"></ons-input>
+<ons-page>
+    <div class="login_center">
+        <form [formGroup]="form" (ngSubmit)="login(form.value)">
+            <ons-card>
+                <div class="title">
+                    Login
+                </div>
+                <div class="content">
+                    <ons-input id="username" name="username" placeholder="Usuario" [formControl]="form.controls['username']" class="form-control"></ons-input>
+                    <ons-input id="password" name="password" placeholder="Password" [formControl]="form.controls['password']" class="form-control"></ons-input>
+                    <ons-button type="submit" (click)="login(form.value)">Acceder</ons-button>
+                    <ons-button (click)="loginWithGoogle()">Acceder con Google</ons-button>
+
+                </div>
+            </ons-card>
+
+            <!-- <ons-row vertical-align="center">
+                <ons-col width="300px">
+                    <ons-input id="username" name="username" placeholder="Usuario" [formControl]="form.controls['username']" class="form-control"></ons-input>
+                </ons-col>
+            </ons-row>
+            <ons-row>
+                <ons-col width="500px">
+                    <ons-input id="password" name="password" placeholder="Password" [formControl]="form.controls['password']" class="form-control"></ons-input>
+                </ons-col>
+            </ons-row>
+            <ons-row style="width: 500px;">
+                <ons-col width="35%">
+                    <ons-button type="submit" (click)="login(form.value)">Acceder</ons-button>
+                </ons-col>
+                <ons-col width="65%">
+                    <ons-button (click)="loginWithGoogle()">Acceder con Google</ons-button>
+                </ons-col>
+            </ons-row> -->
+        </form>
     </div>
-    <div class="form-group">
-        <ons-input id="password" name="password" placeholder="Password" [formControl]="form.controls['password']" class="form-control"></ons-input>
-    </div>
-    <ons-button type="submit" (click)="login(form.value)">Acceder</ons-button>
-</form>
-<ons-button (click)="loginWithGoogle()">Acceder con Google</ons-button>
+</ons-page>
 
 <!-- <div class="login_container">
+    style="margin: 0 auto;"
     <div fxLayout="row" fxLayoutAlign="center center">
         <div fxFlex="25">
             <mat-card>

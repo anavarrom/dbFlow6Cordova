@@ -5,7 +5,7 @@ import { ReactiveFormsModule      } from '@angular/forms';
 import { Ng2UiAuthModule          } from 'ng2-ui-auth';
 import { MobxAngularModule        } from 'mobx-angular';
 import {  HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import {environment} from '../environments/environment';
 
 // Temporal Components
 import { AppComponent } from './app.component';
@@ -35,7 +35,7 @@ import { JsonInterceptorService } from './core/interceptors/json-interceptor.ser
 import { MyHttpLogInterceptor } from './core/interceptors/http.intercept';
 // import {MyErrorHandler} from './shared/errors/MyErrorHandler';
 
-
+import { authConfigOptions } from './app-config';
 /**
  * Page components
  */
@@ -80,23 +80,7 @@ const customModules = [
     OnsenModule,
     ...externalModules,
     ...customModules,
-    Ng2UiAuthModule.forRoot({
-      providers: {
-        google: {
-          clientId: '1040156216476-moaoejmnru44umfgjulbbr1tkb5lef7c.apps.googleusercontent.com',
-          scope: [
-            'https://www.googleapis.com/auth/plus.login',
-            'https://www.googleapis.com/auth/gmail.readonly',
-            'https://mail.google.com/',
-            'https://www.googleapis.com/auth/gmail.modify',
-            'https://www.googleapis.com/auth/drive.appfolder',
-            'https://www.googleapis.com/auth/drive.file',
-            'https://www.googleapis.com/auth/drive',
-            'https://www.googleapis.com/auth/calendar'
-          ]
-        }
-      }
-    })
+    Ng2UiAuthModule.forRoot(authConfigOptions.options)
   ],
   providers: [
     JsonInterceptorService,

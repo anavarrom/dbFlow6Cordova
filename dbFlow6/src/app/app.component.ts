@@ -14,7 +14,7 @@ export class AppComponent implements  OnInit {
   root = LoginComponent;
   ngOnInit() {
     document.addEventListener('deviceready', function() {
-      alert(device.platform);
+      // alert(device.platform);
     }, false);
     }
 }
