@@ -1,6 +1,5 @@
 import { Component , OnInit } from '@angular/core';
 
-import { Page1Component } from './page1/page1.component';
 import { LoginComponent } from './public/login/login.component';
 
 declare var device;

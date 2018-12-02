@@ -7,18 +7,20 @@ import { NotificationStore                } from '../../../core/stores/notificat
 import { UserStore } from '../../../core/stores/user-store';
 
 @Component({
-  selector: 'app-collection-notifications',
+  selector: 'ons-page[app-notifications]',
   templateUrl: './collection-notifications.component.html',
   styleUrls: ['./collection-notifications.component.scss']
 })
 export class CollectionNotificationsComponent implements OnInit {
   // @ViewChild('patata') input: MatFormField;
+  notifications:   Notification[];
 
   constructor(/* public dialog: MatDialog,*/
                public  notificationStore: NotificationStore,
                public  userStore: UserStore) {
 
                 this.notificationStore.moreNotifications();
+               // this.notifications = this.notificationStore.allNotifications;
   }
 
   newNotification(): void {

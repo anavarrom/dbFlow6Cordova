@@ -6,69 +6,20 @@
                     Login
                 </div>
                 <div class="content">
-                    <ons-input id="username" name="username" placeholder="Usuario" [formControl]="form.controls['username']" class="form-control"></ons-input>
-                    <ons-input id="password" name="password" placeholder="Password" [formControl]="form.controls['password']" class="form-control"></ons-input>
-                    <ons-button type="submit" (click)="login(form.value)">Acceder</ons-button>
-                    <ons-button (click)="loginWithGoogle()">Acceder con Google</ons-button>
-
+                    <ons-row vertical-align="center">
+                        <ons-input float id="username" name="username" placeholder="Username" [formControl]="form.controls['username']" class="form-control"></ons-input>
+                    </ons-row>
+                    <ons-row vertical-align="center">
+                        <ons-input float id="password" name="password" placeholder="Password" [formControl]="form.controls['password']" class="form-control"></ons-input>
+                    </ons-row>
+                    <ons-row>
+                        <ons-button type="submit" (click)="login(form.value)">Login</ons-button>
+                    </ons-row>
+                    <ons-row>
+                        <ons-button (click)="loginWithGoogle()">Login with Google</ons-button>
+                    </ons-row>
                 </div>
             </ons-card>
-
-            <!-- <ons-row vertical-align="center">
-                <ons-col width="300px">
-                    <ons-input id="username" name="username" placeholder="Usuario" [formControl]="form.controls['username']" class="form-control"></ons-input>
-                </ons-col>
-            </ons-row>
-            <ons-row>
-                <ons-col width="500px">
-                    <ons-input id="password" name="password" placeholder="Password" [formControl]="form.controls['password']" class="form-control"></ons-input>
-                </ons-col>
-            </ons-row>
-            <ons-row style="width: 500px;">
-                <ons-col width="35%">
-                    <ons-button type="submit" (click)="login(form.value)">Acceder</ons-button>
-                </ons-col>
-                <ons-col width="65%">
-                    <ons-button (click)="loginWithGoogle()">Acceder con Google</ons-button>
-                </ons-col>
-            </ons-row> -->
         </form>
     </div>
 </ons-page>
-
-<!-- <div class="login_container">
-    style="margin: 0 auto;"
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <div fxFlex="25">
-            <mat-card>
-                <mat-card-title>
-                    Login
-                </mat-card-title>
-                <form [formGroup]="form" (ngSubmit)="login(form.value)">
-                    <div fxLayout="column">
-                        <mat-form-field>
-                            <input matInput id="username" name="username" placeholder="Usuario" [formControl]="form.controls['username']">
-                            <mat-hint>Escriba un nombre de usuario</mat-hint>
-                            <mat-error *ngIf="fh.hasError(form, 'username')">
-                                Por favor, escriba un nombre de usuario válido
-                            </mat-error>
-                        </mat-form-field>
-                        <mat-form-field>
-                            <input matInput id="password" name="password" placeholder="Password" [formControl]="form.controls['password']">
-                            <mat-hint>Escriba una contraseña</mat-hint>
-                            <mat-error *ngIf="fh.hasError(form, 'password')">
-                                Por favor, escriba una contraseña válida
-                            </mat-error>
-                        </mat-form-field>
-                        <br/>
-                        <button mat-raised-button color="primary" type="submit">Acceder</button>
-                    </div>
-                </form>
-                <div fxLayout="column">
-                    <br/>
-                    <button mat-raised-button color="warn" (click)="loginWithGoogle()">Acceder con Google</button>
-                </div>
-            </mat-card>
-        </div>
-    </div>
-</div> -->

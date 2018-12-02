@@ -3,8 +3,9 @@ import { Injectable              } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable              } from 'rxjs';
 import { AuthService             } from 'ng2-ui-auth';
-import 'rxjs/add/operator/map';
+import { environment} from '../../../environments/environment';
 
+import 'rxjs/add/operator/map';
 // Shared Imports
 import { Appointment, IAppointment      } from '../../models/appointments';
 import { Notification, INotification      } from '../../models/notification';
@@ -24,7 +25,7 @@ export class NotificationService {
   }
 
   getNotificationsPage(options: IPaginateOptions): Observable<IPaginateResult<INotification>> {
-    return this.http.post('/auth/notification/pageNotifications', options)
+    return this.http.post(environment.baseURL + '/auth/notification/pageNotifications', options)
     .map(response => response as IPaginateResult<INotification>);
    }
 
@@ -33,7 +34,7 @@ export class NotificationService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
 
-    return this.http.post('/auth/notification/addNotification', notification, httpOptions)
+    return this.http.post(environment.baseURL + '/auth/notification/addNotification', notification, httpOptions)
     .map(response => response as INotification);
   }
 }

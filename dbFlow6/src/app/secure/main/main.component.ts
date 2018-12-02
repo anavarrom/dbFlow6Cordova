@@ -6,41 +6,38 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 
-
-import {Label, LabelsService} from './main.service';
-
 import {MessageStore} from '../../core/stores/message-store';
 
+import {CollectionNotificationsComponent} from '../notifications/collection-notifications/collection-notifications.component';
+
 @Component({
-  selector: 'app-main',
+  selector: 'ons-page[app-main]',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
-  providers: [LabelsService]
+  providers: []
 })
 
 export class MainComponent implements OnInit {
   user: any;
   expiration: Date;
   secret: Observable<string>;
-  labelsDto: Label[];
-  errorMessage: string;
-  myLabels: any;
-  myMessages: any;
+
+  tabs = [{
+    label: 'Notifications',
+    icon: 'ion-home',
+    page: CollectionNotificationsComponent,
+  }];
 
   constructor(private http: HttpClient,
     private auth: AuthService,
     private router: Router,
-    private labelsService: LabelsService, public  messages: MessageStore) {
-
-    this.myLabels = [];
-    this.myMessages = [];
+    public  messages: MessageStore) {
   }
 
   ngOnInit() {
-    this.user = this.auth.getPayload();
+    this.user       = this.auth.getPayload();
     this.expiration = this.auth.getExpirationDate();
-    this.secret = this.http.get<string>('/secret');
-    // this.messages.loadMessages3();
+    this.secret     = this.http.get<string>('/secret');
   }
 
   logout() {
@@ -60,43 +57,8 @@ export class MainComponent implements OnInit {
       });
   }
 
-  link() {
-    this.auth.link('google')
-      .subscribe({
-        error: (err: any) => alert(err.message),
-        complete: () => {
-          this.expiration = this.auth.getExpirationDate();
-          this.user = this.auth.getPayload();
-        }
-      });
-  }
+  onPrechange(event) {
 
-   getLabels() {
-    const allLabelsURL = 'http://localhost:3000/auth/labels';  // URL to web API
-
-    // let x;
-     // this.http.get<string>('/auth/labels')
-     this.http.get<string>('/auth/google/labels2')
-      .pipe(tap(token => this.auth.setToken(token)))
-      .subscribe(
-        labels => this.myLabels = labels,
-        error =>  this.errorMessage = <any>error);
-     // this.labelsService.getAllLabels()
-  /*   this.http.get('/auth/labels')
-                  .pipe(tap(token => this.auth.setToken(token)))
-                     .subscribe(
-                       labels => x = labels,
-                       error =>  this.errorMessage = <any>error);
-
-                       */
-  }
-
-   getMessages() {
-   /* this.http.get<string>('/auth/google/messages')
-   //   .pipe(tap(token => this.auth.setToken(token)))
-      .subscribe(
-        patata => this.myMessages = patata,
-        error =>  this.errorMessage = <any>error);*/
   }
 }
 

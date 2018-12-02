@@ -13,8 +13,7 @@ import { UserStore         } from '../../core/stores/user-store';
 // Custom models
 import { ITokenUser } from '../../models/user';
 
-import {Page1Component} from '../../page1/page1.component';
-import {environment} from '..//../../environments/environment';
+import {MainComponent} from '../../secure/main/main.component';
 
 @Component({
   selector: 'app-login',
@@ -49,10 +48,10 @@ export class LoginComponent implements OnInit {
             const currentUser = data.tokenInfo;
             // Update the user store
             this.userStore.setCurrentUser(currentUser);
-            this.navigator.element.pushPage(Page1Component);
+            this.navigator.element.pushPage(MainComponent);
           },
         complete: () => {
-          this.router.navigateByUrl('main');
+         //  this.router.navigateByUrl('main');
         }
       });
   }

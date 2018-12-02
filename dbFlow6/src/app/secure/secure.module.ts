@@ -4,6 +4,9 @@ import { CommonModule      } from '@angular/common';
 import { FormsModule       } from '@angular/forms';
 import { MobxAngularModule } from 'mobx-angular';
 import { RouterModule, Routes } from '@angular/router';
+import { OnsenModule       } from 'ngx-onsenui';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 // import { FlexLayoutModule } from '@angular/flex-layout';
 // import { NgxJsonViewerModule } from 'ngx-json-viewer';
 
@@ -29,6 +32,7 @@ const externalModules = [
   FormsModule,
   MobxAngularModule,
   RouterModule,
+  OnsenModule
 ];
 
 const dbFlow6Components = [
@@ -53,6 +57,7 @@ const dbFlow6Components = [
 //  providers: [{ provide: Todos, useClass: remotedev(Todos) }],
   providers: [],
   exports: [SecureComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
 export class SecureModule { }

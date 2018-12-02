@@ -1,4 +1,11 @@
-HOLA NOTIFICACIONES
+<ons-list>
+    <ons-list-item *ngFor="let notif of notificationStore.notifications">
+        <div>
+            {{notif.subject}}
+        </div>
+    </ons-list-item>
+</ons-list>
+
 <!-- <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
     <div fxFlex="grow 75" fxLayoutAlign="start center">
         <button mat-raised-button color="primary" type="submit" (click)="newNotification()" i18n="@@new">

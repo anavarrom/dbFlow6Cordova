@@ -9,13 +9,7 @@ import {environment} from '../environments/environment';
 
 // Temporal Components
 import { AppComponent } from './app.component';
-import { Page1Component } from './page1/page1.component';
-import { Page2Component } from './page2/page2.component';
-import { SideComponent } from './page1/side/side.component';
-import { ContentComponent } from './page1/content/content.component';
-import { Tab1Component } from './page1/content/tab1/tab1.component';
-import { Tab2Component } from './page1/content/tab2/tab2.component';
-
+ 
 // Custom  modules
 import { AppRoutingModule         } from './app-routing.module';
 import { SecureModule             } from './secure/secure.module';
@@ -35,17 +29,31 @@ import { JsonInterceptorService } from './core/interceptors/json-interceptor.ser
 import { MyHttpLogInterceptor } from './core/interceptors/http.intercept';
 // import {MyErrorHandler} from './shared/errors/MyErrorHandler';
 
-import { authConfigOptions } from './app-config';
+// import { authConfigOptions } from './app-config';
+
+const authConfigOptions  = {
+  baseUrl: environment.baseURL,
+  providers: {
+      google: {
+        clientId: '1040156216476-moaoejmnru44umfgjulbbr1tkb5lef7c.apps.googleusercontent.com',
+        scope: [
+          'https://www.googleapis.com/auth/plus.login',
+          'https://www.googleapis.com/auth/gmail.readonly',
+          'https://mail.google.com/',
+          'https://www.googleapis.com/auth/gmail.modify',
+          'https://www.googleapis.com/auth/drive.appfolder',
+          'https://www.googleapis.com/auth/drive.file',
+          'https://www.googleapis.com/auth/drive',
+          'https://www.googleapis.com/auth/calendar'
+        ]
+      }
+    }
+  };
+
 /**
  * Page components
  */
 const pages = [
-  Page1Component,
-  Page2Component,
-  SideComponent,
-  ContentComponent,
-  Tab1Component,
-  Tab2Component,
 ];
 
 const dbFlow6Components = [
@@ -80,7 +88,7 @@ const customModules = [
     OnsenModule,
     ...externalModules,
     ...customModules,
-    Ng2UiAuthModule.forRoot(authConfigOptions.options)
+    Ng2UiAuthModule.forRoot(authConfigOptions)
   ],
   providers: [
     JsonInterceptorService,
