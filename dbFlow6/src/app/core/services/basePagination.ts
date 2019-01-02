@@ -17,6 +17,15 @@ export interface IPaginateOptions {
     pages?: number;
     offset?: number;
   }
+  export interface IPaginateResult2 {
+    docs: Array<Object>;
+    total: number;
+    limit: number;
+    page?: number;
+    pages?: number;
+    offset?: number;
+  }
+
   export class PaginateOptions implements IPaginateOptions {
 
     select?: Object | string;

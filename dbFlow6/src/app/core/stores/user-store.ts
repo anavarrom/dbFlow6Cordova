@@ -1,7 +1,7 @@
 // External Imports
 // import remotedev                                       from 'mobx-remotedev/lib/dev';
 import { Injectable                                  } from '@angular/core';
-import { TokenUser, ITokenUser                        } from '../../models/user';
+import { TokenUser, ITokenUser                        } from '../models/user';
 import { observable, computed, action, autorun, toJS } from 'mobx';
 import { AuthService                                        } from 'ng2-ui-auth';
 

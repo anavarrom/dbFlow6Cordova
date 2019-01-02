@@ -4,7 +4,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 // import { MatDialogRef, MAT_DIALOG_DATA, MatAutocompleteSelectedEvent, MatChipInputEvent } from '@angular/material';
 
 // Internal Imports
-import {Notification} from '../../../models/notification';
+import {Notification} from '../../../core/models/notification';
 import { NotificationStore  } from '../../../core/stores/notification-store';
 import { MessageStore } from '../../../core/stores/message-store';
 

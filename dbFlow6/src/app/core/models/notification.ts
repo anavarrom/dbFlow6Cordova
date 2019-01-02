@@ -1,7 +1,6 @@
 // import { ITokenUser } from './user'
 import {ISearchable} from './search';
 
-
 export enum NotificationStatus {
     EMITTED          = 'Emitted',
     RECEIVED         = 'Received',

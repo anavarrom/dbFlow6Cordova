@@ -6,10 +6,10 @@ import { AuthService } from 'ng2-ui-auth';
 import 'rxjs/add/operator/map';
 
 // Shared Imports
-import { Message, IMessage              } from '../../models/message';
-import { Label, ILabel                  } from '../..//models/label';
-import { Notification, INotification    } from '../..//models/notification';
-import { ITokenUser                     } from '../../models/user';
+import { Message, IMessage              } from '../models/message';
+import { Label, ILabel                  } from '../models/label';
+import { Notification, INotification    } from '../models/notification';
+import { ITokenUser                     } from '../models/user';
 
 // Internal Imports
 import {IPaginateOptions, IPaginateResult } from './basePagination';

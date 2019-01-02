@@ -5,9 +5,9 @@ import { observable, computed, action, autorun, toJS } from 'mobx';
 
 // Project Imports
 import { UsersService } from '../services/users.service';
-import { Message, IMessage                           } from '../../models/message';
-import { Label                                       } from '../../models/label';
-import { Notification                                } from '../../models/notification';
+import { Message, IMessage                           } from '../models/message';
+import { Label                                       } from '../models/label';
+import { Notification                                } from '../models/notification';
 import { PaginateOptions, IPaginateResult             } from '../services/basePagination';
 
 @Injectable()

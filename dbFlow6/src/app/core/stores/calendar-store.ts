@@ -5,7 +5,7 @@ import { observable, computed, action, autorun, toJS } from 'mobx';
 
 // Project Imports
 import { CalendarService                             } from '../services/calendar.service';
-import { Appointment                                 } from '../../models/appointments';
+import { Appointment                                 } from '../models/appointments';
 import { PaginateOptions, IPaginateResult            } from '../services/basePagination';
 
 @Injectable()

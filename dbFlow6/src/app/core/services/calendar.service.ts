@@ -6,8 +6,8 @@ import { AuthService             } from 'ng2-ui-auth';
 import 'rxjs/add/operator/map';
 
 // Shared Imports
-import { Appointment, IAppointment      } from '../../models/appointments';
-import { ITokenUser                     } from '../../models/user';
+import { Appointment, IAppointment      } from '../models/appointments';
+import { ITokenUser                     } from '../models/user';
 
 // Internal Imports
 import {IPaginateOptions, IPaginateResult } from './basePagination';

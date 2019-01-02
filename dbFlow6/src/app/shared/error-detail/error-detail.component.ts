@@ -5,7 +5,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 
 // Custom modules
 // Custom Components
-import {IException} from '../../models/exception';
+import {IException} from '../../core/models/exception';
 
 @Component({
   selector: 'app-error-detail',

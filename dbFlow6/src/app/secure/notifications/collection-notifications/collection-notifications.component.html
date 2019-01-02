@@ -1,5 +1,7 @@
-<ons-list>
-    <ons-list-item *ngFor="let notif of notificationStore.notifications">
+<ons-list *mobxAutorun>
+    <p>Tenemos {{ (notification$ | async)?.size }}</p>
+    <!-- <ons-list-item *ngFor="let notif of notifViews"> -->
+    <ons-list-item *ngFor="let notif of (notification$ | async)?.notifications">
         <div>
             {{notif.subject}}
         </div>

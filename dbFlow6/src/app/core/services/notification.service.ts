@@ -7,12 +7,12 @@ import { environment} from '../../../environments/environment';
 
 import 'rxjs/add/operator/map';
 // Shared Imports
-import { Appointment, IAppointment      } from '../../models/appointments';
-import { Notification, INotification      } from '../../models/notification';
-import { ITokenUser                     } from '../../models/user';
+import { Appointment, IAppointment      } from '../models/appointments';
+import { Notification, INotification      } from '../models/notification';
+import { ITokenUser                     } from '../models/user';
 
 // Internal Imports
-import {IPaginateOptions, IPaginateResult } from './basePagination';
+import {IPaginateOptions, IPaginateResult2 } from './basePagination';
 
 @Injectable({
   providedIn: 'root'
@@ -24,9 +24,9 @@ export class NotificationService {
 
   }
 
-  getNotificationsPage(options: IPaginateOptions): Observable<IPaginateResult<INotification>> {
+  getNotificationsPage(options: IPaginateOptions): Observable<IPaginateResult2> {
     return this.http.post(environment.baseURL + '/auth/notification/pageNotifications', options)
-    .map(response => response as IPaginateResult<INotification>);
+    .map(response => response as IPaginateResult2);
    }
 
   addNotification(notification: INotification): Observable<INotification> {
