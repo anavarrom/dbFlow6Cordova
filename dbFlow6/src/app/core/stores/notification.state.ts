@@ -36,12 +36,12 @@ export class NotificationState {
     @Action(LoadNotifications)
     LoadNotifications(stateContext: StateContext<INotificationState>) {
         this.notifService.getNotificationsPage(this.notificationOptions).subscribe(
-            (notifs: IPaginateResult2) => {
+            (notifs: INotification[]) => {
 
-              const notifs2: Notification[] = notifs.docs as Notification[];
+              // const notifs2: Notification[] = notifs.docs as Notification[];
 
               // Actualizamos el estado con pathState({nombre_propiedad: valor}).
-              stateContext.patchState({ notifications: notifs2, size: notifs2.length });
+              stateContext.patchState({ notifications: notifs, size: notifs.length });
 
               // const obj = notifications.docs[0];
               // const objB: INotification = automapper.map('NotifiCationService', 'Notification', obj);

@@ -50,12 +50,13 @@ export class NotificationStore {
 
   @action moreNotifications() {
     this.notifService.getNotificationsPage(this.notificationOptions).subscribe(
-      (notifications: IPaginateResult2) => {
+
+      /*(notifications: IPaginateResult2) => {
 
         const obj = notifications.docs[0];
 
         const objB: INotification = automapper.map('NotifiCationService', 'Notification', obj);
-        this.notifications.push(objB);
+        this.notifications.push(objB);*/
 /*
         const r = R.groupWith(
           (a: Notification, b: Notification) => a.emittedDate.getMonth() === b.emittedDate.getMonth() ,
@@ -67,10 +68,10 @@ export class NotificationStore {
         // this.notificationOptions.offset += 2;
               // R.map((item, index) => {}, items);
                // this.notifications = this.notificationStore.allNotifications;
-      }, err => {
+     /* }, err => {
         // Log errors if any
         console.log(err);
-      }
+      }*/
     );
   }
 
